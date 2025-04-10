@@ -56,5 +56,12 @@ public class NamesInDictionary {
          * Good luck!
          */
         benchHash();
+//        System.out.printf("Sanat: %d, Nimet: %d\n", finnishWords.size(), finnishNames.size());                        Tämä tulostaa -> Sanat: 93086, Nimet: 15665
+//        System.out.printf("Sanat ilman tuplia: %d, Nimet ilman tuplia: %d\n", hashWords.size(), hashNames.size());    Tämä tulostaa -> Sanat ilman tuplia: 93086, Nimet ilman tuplia: 15169
+
+// Elikkä python testissä (Oikea määrä sanoja tuloksessa) -> Nimet: 15667 ja nimet ilman tuplia: 15170
+// Java testissä (Yksi nimi puuttuu lopputuloksesta) -> Nimet: 15665 ja nimet ilman tuplia: 15169
+// SYY TÄHÄN ON SE, PYTHON TESTISSÄ OTAMME MUKAAN ENSIMMÄISEN RIVIN JOSSA ON VAIN ETUNIMI. NamesReader SKIPPAA TÄMÄN JA SIITÄ SYYSTÄ JAVA SAA YHDEN NIMEN VÄHEMMÄN (ETUNIMI)
+// VOISIMME SIIS VAIHTAA NamesReaderiin Skip(0) JOLLOIN SE EI SKIPPAA EKAA RIVIÄ JA SAAMME 579 JOISTA YKSI ON ETUNIMI. PYTHONISSA VOISIMME MYÖS SKIPATA EKAN RIVIN JOLLOIN SE SAISI 578
     }
 }

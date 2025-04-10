@@ -1,5 +1,5 @@
-# Päätin tehdä tällaisen testitiedoston pythonilla. Näyttäisi tulostavan oikean määrän eli 579 nimeä. Tämähän on hidas kun mikä, mutta sillä ei ole tässä kontekstissa merkitystä.
-def readFinnishWords() -> list[str]:
+# Päätin tehdä tällaisen testitiedoston pythonilla. Näyttäisi tulostavan oikean määrän eli 579 nimeä (TÄHÄN KUULUU ETUNIMI). Tämähän on hidas kun mikä, mutta sillä ei ole tässä kontekstissa merkitystä.
+def readFinnishWords() -> list[str]: # EI poista ekaa riviä eli tulokseen tulee myös Etunimi
     finnishWords = []
     with open("kaikkisanat.txt", "r") as file:
         for line in file:
@@ -7,7 +7,7 @@ def readFinnishWords() -> list[str]:
 
     return finnishWords
 
-def readFinnishNames() -> list[str]:
+def readFinnishNames() -> list[str]: # EI poista ekaa riviä eli tulokseen tulee myös Etunimi
     finnishNamesMen = []
     finnishNamesWomen = []
     with open("etunimitilasto-miehet-ensimmainen.csv") as miehet:
@@ -20,13 +20,18 @@ def readFinnishNames() -> list[str]:
 
     return finnishNamesMen + finnishNamesWomen
 
-
-if __name__ == "__main__":
-    words = list(set(readFinnishWords()))
-    names = list(set(readFinnishNames()))
+def printNamesWithNumbering(words: list[str], names: list[str]) -> None:
     i = 0
-
     for name in names:
         if str.lower(name) in words:
             i += 1
             print(f"{i} -- {name}")
+
+
+if __name__ == "__main__":
+    words = list(set(readFinnishWords()))
+    names = list(set(readFinnishNames()))
+    
+    printNamesWithNumbering(words, names)
+#    print(f"Sanat: {len(readFinnishWords())}, Nimet: {len(readFinnishNames())}") Tämä tulostaa -> Sanat: 93086, Nimet: 15667
+#    print(f"Sanat ilman tuplia: {len(words)}, Nimet ilman tuplia: {len(names)}") Tämä tulostaa -> Sanat ilman tuplia: 93086, Nimet ilman tuplia: 15170
