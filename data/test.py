@@ -1,4 +1,5 @@
 # Päätin tehdä tällaisen testitiedoston pythonilla. Näyttäisi tulostavan oikean määrän eli 579 nimeä (TÄHÄN KUULUU ETUNIMI). Tämähän on hidas kun mikä, mutta sillä ei ole tässä kontekstissa merkitystä.
+# Yllä oleva on väärää tietoa oikeasta nimien määrästä. Määrä on varmistettu ja oikea on 578 nimeä, eli olin alunperin oikeassa. Jätän tämän tiedoston kuitenkin tähän olemaan.
 def readFinnishWords() -> list[str]: # EI poista ekaa riviä eli tulokseen tulee myös Etunimi
     finnishWords = []
     with open("kaikkisanat.txt", "r") as file:
