@@ -8,7 +8,7 @@ package wordplay;
 //import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import org.openjdk.jmh.annotations.Benchmark;
+//import org.openjdk.jmh.annotations.Benchmark;
 import java.util.TreeSet;
 
 //import wordplay.benchmark.BenchmarkConfig;
@@ -24,7 +24,7 @@ public class NamesInDictionary /*extends BenchmarkConfig*/{
     private static HashSet<String> hashWords = new HashSet<>(finnishWords);
     private static TreeSet<String> treeSet = new TreeSet<>(hashNames);
 
-    @Benchmark
+//    @Benchmark
     public static void benchHash() { 
         int i = 0;
         for (String name : treeSet) {
